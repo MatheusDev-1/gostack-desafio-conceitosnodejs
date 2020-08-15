@@ -18,7 +18,11 @@ app.get("/repositories", (request, response) => {
 app.post("/repositories", (request, response) => {
   const { url, title, techs } = request.body;
 
-  const repository = { id: repositories.length >= 0 ? repositories.length + 1 : 0, url, title, techs, likes: 0 };
+  const repository = { id: repositories.length >= 0 ? repositories.length + 1 : 0,
+                       url,
+                       title,
+                       techs,
+                       likes: 0 };
 
   repositories.push(repository);
 
@@ -33,8 +37,6 @@ app.put("/repositories/:id", (request, response) => {
    
     return response.status(400).json({error: "Repository not found"})
   }
-
-  const repo = repositories.find(repository => repository.id == id)
 
   const repositoryIndex = repositories.findIndex(repository => repository.id == id)
 
