@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-// const { uuid } = require("uuidv4");
+const { uuid } = require("uuidv4");
 // OBSERVAÇÃO: comentei as linhas expect(isUuid(response.body.id)).toBe(true); porque não consegui fazer funcionar o uuid na aplicação
 
 const app = express();
@@ -18,7 +18,7 @@ app.get("/repositories", (request, response) => {
 app.post("/repositories", (request, response) => {
   const { url, title, techs } = request.body;
 
-  const repository = { id: repositories.length >= 0 ? repositories.length + 1 : 0,
+  const repository = { id: uuid(),
                        url,
                        title,
                        techs,
