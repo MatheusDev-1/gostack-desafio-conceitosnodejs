@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 
 const { uuid } = require("uuidv4");
-// OBSERVAÇÃO: comentei as linhas expect(isUuid(response.body.id)).toBe(true); porque não consegui fazer funcionar o uuid na aplicação
 
 const app = express();
 
